@@ -13,16 +13,27 @@
         <label for="movie_name">Movie Name</label>
         <input type="text" class="form-control" id="movie_name" name="movie_name" placeholder="Enter Movie Name" required>
     </div>
+    <br>
     <!-- Input Movie Director Name -->
     <div class="form-group">
         <label for="director_name">Director Name</label>
         <input type="text" class="form-control" id="director_name" name="director_name" placeholder="Enter Director Name" required>
+    </div>
+    <br>
     <!-- Input Movie Rating (1-5) -->
     <div class="form-group">
         <label for="rating">Rating</label>
         <input type="number" class="form-control" id="rating" name="rating" placeholder="Enter Rating (1-5)" min="1" max="5" required>
     </div>
+    <br>
     <!-- Submit Button -->
     <button type="submit" class="btn btn-primary">Submit</button>
-</form>"
+
+    <!-- Error Message -->
+    {% if error %}
+    <div class="alert alert-danger mt-3" role="alert">
+        {{ error }}
+    </div>
+    {% endif %}
+</form>
 {% endblock %}
