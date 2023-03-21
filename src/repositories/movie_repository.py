@@ -12,7 +12,7 @@ def get_movie_repository():
         """In memory database which is a simple dict of movies"""
 
         def __init__(self) -> None:
-            self._db: dict[int, Movie] = {1: Movie(1,"Hunger Games", "Bay", 9), 2:Movie(2,"Drive to Survive", "Formula 1", 5), 5: Movie(5,"La La Land", "Ryan", 7)}
+            self._db: dict[int, Movie] = {}
 
         def get_all_movies(self) -> dict[int, Movie]:
             """Simply return all movies from the in-memory database"""
@@ -38,6 +38,7 @@ def get_movie_repository():
             new_id = randint(0, 100_000)  # Sufficiently unique ID for our purposes
             movie = Movie(new_id, title, director, rating)
             # Save the instance in our in-memory database
+            
             self._db[new_id] = movie
             # Return the movie instance
             return movie
