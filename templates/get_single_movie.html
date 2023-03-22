@@ -5,4 +5,12 @@
 {% block body %}
 <h1 class="mb-5"></h1>
 <!-- TODO: Feature 4 -->
+<tr>
+    <td>
+        <form action="{{ url_for('delete_movie', movie_id=movie_id) }}" method="post">
+            <input type="hidden" name="movie_id" value="{{movie_id}}">
+        <button type="submit" class="btn btn-danger mx-5">Delete</button>
+    </form>
+    </td>
+</tr>
 {% endblock %}
