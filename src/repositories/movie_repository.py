@@ -4,7 +4,6 @@ from src.models.movie import Movie
 
 _movie_repo = None
 
-
 def get_movie_repository():
     global _movie_repo
 
@@ -12,7 +11,7 @@ def get_movie_repository():
         """In memory database which is a simple dict of movies"""
 
         def __init__(self) -> None:
-            self._db: dict[int, Movie] = {}
+            self._db: dict[int, Movie] = {1: Movie(1, "Movie", "Dir Name", 5), 2: Movie(2,"Movie2", "Dir Name", 5)}
 
         def get_all_movies(self) -> dict[int, Movie]:
             """Simply return all movies from the in-memory database"""
