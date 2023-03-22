@@ -30,22 +30,22 @@ def create_movie():
     # After creating the movie in the database, we redirect to the list all movies page
 
     # Gets form data
-    mv_name = request.form.get('movie_name', type=str)
-    dir_name = request.form.get('director_name', type=str)
-    rating = request.form.get('rating', type=int)
+    mv_name = request.form.get('movie_name', None, type=str)
+    dir_name = request.form.get('director_name', None, type=str)
+    rating = request.form.get('rating', None, type=int)
 
     # Checks if form data is valid
     errors = []
 
     if mv_name is None:
-        errors.append("Invalid Movie Name")
+        errors.append('Invalid Movie Name')
     if dir_name is None:
-        errors.append("Invalid Director Name")
-    if rating is None:
-        errors.append("Invalid Rating")
+        errors.append('Invalid Director Name')
+    if rating is None or rating < 1 or rating > 5:
+        errors.append('Invalid Rating')
     
     if errors != []:
-        return render_template('create_movies_form.html', create_rating_active=True, status_code=480, errors=errors)
+        return render_template('create_movies_form.html', create_rating_active=True, errors=errors)
 
     movie_repository.create_movie(mv_name, dir_name, rating)
     return redirect('/movies')
