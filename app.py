@@ -5,7 +5,6 @@ from src.repositories.movie_repository import get_movie_repository
 app = Flask(__name__)
 
 # Get the movie repository singleton to use throughout the application
-#idk where else to do it so i am going to instantiate new movie repository aqui 
 movie_repository = get_movie_repository()
 
 @app.get('/')
