@@ -1,5 +1,4 @@
 from random import randint
-
 from src.models.movie import Movie
 
 _movie_repo = None
@@ -10,9 +9,8 @@ def get_movie_repository():
 
     class MovieRepository:
         """In memory database which is a simple dict of movies"""
-
         def __init__(self) -> None:
-            self._db: dict[int, Movie] = {}
+            self._db: dict[int, Movie] = {1: Movie(1, "Hunger Games", "Bay", 9), 2: Movie(2, "Drive to Survive", "Formula 1", 5), 5: Movie(5, "La La Land", "Ryan", 7)}
 
         def get_all_movies(self) -> dict[int, Movie]:
             """Simply return all movies from the in-memory database"""
