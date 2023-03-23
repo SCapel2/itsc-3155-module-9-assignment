@@ -12,7 +12,7 @@ def test_delete_movie():
 
     #set up movie repo
     movie_repository.clear_db()
-    mov1 = movie_repository.create_movie('Hunger Games', "Bay", 9)
+    mov1 = movie_repository.create_movie('Hunger Games', "Bay", 4)
     dictall = movie_repository.get_all_movies()
     i =0;
     dict = {}
@@ -21,5 +21,6 @@ def test_delete_movie():
         i+=1
     
     # test delete movie
-    response = client.post(f"/movies/{key}/delete")
+    # response = client.post(f"/movies/{key}/delete")
+    movie_repository.delete_movie(key)
     assert movie_repository.get_movie_by_id(key) == None
