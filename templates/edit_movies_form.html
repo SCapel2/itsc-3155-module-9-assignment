@@ -6,7 +6,7 @@
 <h1 class="mb-5">Edit Movie</h1>
 <!-- TODO: Feature 5 -->
 
-<form method="post">
+<form method="post" action="/movies/{{movie_id}}" after method="post">
     <div class="mb-3">
         <label for="title" class="form-label">Title</label>
         <input type="text" class="form-control" id="title" name="title" required>
