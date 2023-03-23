@@ -23,6 +23,6 @@ def test_search_movies():
     rating3 = movie3.rating
 
 
-    assert rating1 == 9
+    assert rating1 == 4
     assert rating2== 5
-    assert rating3 == 7
+    assert rating3 == 3
