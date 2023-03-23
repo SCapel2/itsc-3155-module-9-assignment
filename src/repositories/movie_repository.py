@@ -36,6 +36,7 @@ def get_movie_repository():
             new_id = randint(0, 100_000)  # Sufficiently unique ID for our purposes
             movie = Movie(new_id, title, director, rating)
             # Save the instance in our in-memory database
+            
             self._db[new_id] = movie
             # Return the movie instance
             return movie
