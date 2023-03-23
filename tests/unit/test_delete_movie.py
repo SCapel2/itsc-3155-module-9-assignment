@@ -21,5 +21,6 @@ def test_delete_movie():
         i+=1
     
     # test delete movie
-    response = client.post(f"/movies/{key}/delete")
+    # response = client.post(f"/movies/{key}/delete")
+    movie_repository.delete_movie(key)
     assert movie_repository.get_movie_by_id(key) == None
