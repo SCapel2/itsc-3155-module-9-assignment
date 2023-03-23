@@ -4,7 +4,6 @@ from src.models.movie import Movie
 
 _movie_repo = None
 
-
 def get_movie_repository():
     global _movie_repo
 
