@@ -45,7 +45,6 @@ def create_movie():
         errors.append('Invalid Rating')
     
     if errors != []:
-        print("!!!!!!")
         return render_template('create_movies_form.html', create_rating_active=True, errors=errors)
 
     movie_repository.create_movie(mv_name, dir_name, rating)
