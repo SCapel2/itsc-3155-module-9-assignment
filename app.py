@@ -37,14 +37,15 @@ def create_movie():
     # Checks if form data is valid
     errors = []
 
-    if mv_name is None:
+    if mv_name is None or mv_name == '':
         errors.append('Invalid Movie Name')
-    if dir_name is None:
+    if dir_name is None or dir_name == '':
         errors.append('Invalid Director Name')
     if rating is None or rating < 1 or rating > 5:
         errors.append('Invalid Rating')
     
     if errors != []:
+        print("!!!!!!")
         return render_template('create_movies_form.html', create_rating_active=True, errors=errors)
 
     movie_repository.create_movie(mv_name, dir_name, rating)
